@@ -174,17 +174,17 @@ services:
       - start
 
     # PoA block explorer. Provided by Magicking
-  clixplorer:
-      container_name: clixplorer
-      build:
-        context: ./clixplorer
-      command: [nginx]
-      tty: true
-      stdin_open: true
-      volumes:
-        - .:/usr/share/nginx/html:ro
-      ports:
-        - 7130:8001
+#  clixplorer:
+#      container_name: clixplorer
+#      build:
+#        context: ./clixplorer
+#      command: [nginx]
+#      tty: true
+#      stdin_open: true
+#      volumes:
+#        - .:/usr/share/nginx/html:ro
+#      ports:
+#        - 7130:8001
 
 
 networks:
