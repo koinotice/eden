@@ -24,7 +24,8 @@ ENV address=""
 ENV bootnodeId=""
 ENV bootnodeIp=""
 
-CMD exec geth --bootnodes "enode://$bootnodeId@$bootnodeIp:30301" --networkid "112358" --verbosity=4 --rpc --rpcaddr "0.0.0.0" --rpcapi "eth,web3,net,admin,debug,db" --rpccorsdomain "*" --ws --wsaddr="0.0.0.0" --wsorigins "*"  --syncmode="full"
+CMD exec geth --bootnodes "enode://$bootnodeId@$bootnodeIp:30301" --networkid "112358" --verbosity=4 --rpc --rpcaddr "0.0.0.0" --rpcapi "eth,web3,net,admin,debug,db" --rpccorsdomain "*" --ws --wsport 8546 --wsorigins "*" --wsaddr=0.0.0.0  --syncmode="full"
 
 EXPOSE 8545
+EXPOSE 8546
 EXPOSE 30303
