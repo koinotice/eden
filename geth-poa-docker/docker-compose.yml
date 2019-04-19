@@ -136,7 +136,7 @@ services:
     depends_on:
       - geth-dev-node
     ports:
-      - 8080:8080
+      - 7100:8080
     build: ./explorer
     image: maibornwolff/eden:geth-explorer
     container_name: geth-explorer
@@ -158,10 +158,34 @@ services:
     volumes:
       - ./dashboard/ws_secret.json:/eth-netstats/ws_secret.json:ro
     ports:
-      - 8008:3000
+      - 7110:3000
     networks:
       chainnet:
         ipv4_address: 172.25.0.136
+
+  remixide:
+    ports:
+      - 7120:8080
+    build:
+      context: ./remixide
+    container_name: remixide
+    entrypoint:
+      - npm
+      - start
+
+    # PoA block explorer. Provided by Magicking
+    clixplorer:
+      container_name: clixplorer
+      build:
+        context: ./clixplorer
+      command: [nginx]
+      tty: true
+      stdin_open: true
+      volumes:
+        - .:/usr/share/nginx/html:ro
+      ports:
+        - 7130:8001
+
 
 networks:
   chainnet:
