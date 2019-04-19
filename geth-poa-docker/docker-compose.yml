@@ -174,7 +174,7 @@ services:
       - start
 
     # PoA block explorer. Provided by Magicking
-    clixplorer:
+  clixplorer:
       container_name: clixplorer
       build:
         context: ./clixplorer
