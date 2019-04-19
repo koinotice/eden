@@ -24,4 +24,4 @@ ENV address=""
 ENV bootnodeId=""
 ENV bootnodeIp=""
 
-CMD exec geth --bootnodes "enode://$bootnodeId@$bootnodeIp:30301" --networkid "6660001" --verbosity=4  --syncmode=full --mine --gasprice "0" --etherbase $address --unlock $address --password ~/.accountpassword --rpc --rpcaddr "0.0.0.0" --rpcapi "eth,web3,net,admin,debug,db" --rpccorsdomain "*"
+CMD exec geth --bootnodes "enode://$bootnodeId@$bootnodeIp:30301" --networkid "112358" --verbosity=4  --syncmode=full --mine --gasprice "0" --etherbase $address --unlock $address --password ~/.accountpassword --rpc --rpcaddr "0.0.0.0" --rpcapi "eth,web3,net,admin,debug,db" --rpccorsdomain "*"
